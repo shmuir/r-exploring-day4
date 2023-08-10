@@ -4,3 +4,37 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+library(skimr)
+library(GGally)
+library(viridis)
+```
+
+```{r}
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+skimr::skim(diamonds)
+```
+
+```{r}
+ggpairs(diamonds)
+```
+
+```{r}
+ggplot(diamonds, aes(price, carat, color = cut)) +
+  geom_point() +
+  theme_linedraw()
+
+ggplot(diamonds, aes(carat)) +
+  geom_histogram() +
+  theme_linedraw()
+
+ggplot(diamonds, aes(clarity, price)) +
+  geom_boxplot() +
+  theme_minimal()
+
+```
+
